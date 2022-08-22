@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+  Home
+{% endblock %}
+
+{% block conteudo %}
+<section id="fundo">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-5 d-flex">
+
+            <div class="align-self-center">
+              <h2 style="color:#242659">
+                Controle de Estoque
+              </h2>
+              <h3 class="display-1" style="color:#242659">Restaurante Universitário</h3>
+                <h5 style="color:#242659">UFSC - UNIVERSIDADE FEDERAL DE SANTA CATARINA
+              </h5>
+
+            </div>
+
+            <div class="col-md-8 col-lg-2">
+
+            </div>
+          <img src="{% static 'img/logo.png' %}" class="rounded float-right mx-100" alt="Image" height="580">
+        </div>
+       </div>
+      </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% include '_cabecalho.html' %}
+{% block conteudo %} {% endblock %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>AdicionarProduto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+ <body>
+   <div class="text-center d-flex justify-content-between">
+   <div class="container-fluid">
+   <div class="col-flex m-auto pt-2 pb-flex text-center">
+        <h2> ADICIONAR PRODUTO </h2>
+   </div>
+   <div class="col-5 m-auto pt-flex pb-2 text-left ">
+        <div id="result"></div>
+        <form name="form" id="form" action="{% if db %}/update/produtos/{{db.id}}/{% else %}/create/produtos/{% endif %}" method="post">
+            {% csrf_token %}
+            <div class="form-group mt-4">Descrição: {{form.descricao}}</div>
+            <div class="form-group mt-4">Unidade: {{form.unidade}}</div>
+            <div class="form-group mt-4">Quantidade: {{form.qtde_produto}}</div>
+            <div class="form-group mt-4">Estoque Mínimo: {{form.estoque_min}}</div>
+            <div class="form-group mt-4">Preço Unit.(R$): {{form.preco}}</div>
+            <div class="form-group mt-4">Validade: {{form.validade}}</div>
+            <div class="form-group mt-4">Observação: {{form.observacao}}</div>
+            <div class="form-group mt-4">Fornecedor: {{form.fornecedor}}</div>
+            <div class="form-group mt-4">Categoria: {{form.categoria}}</div>
+
+            <div class="col-flex m-auto pt-2 pb-2 text-left">
+                  <input type="submit" class="btn btn-success" value="Salvar">
+                  <a href="/produtos" class="btn btn-primary col-flex"> Voltar </a>
+            </div>
+         </form>
+    </div>
+  </div>
+    {% load static %}
+    <script src="{% static 'javascript.js' %}"></script>
+ </body>

@@ -1,0 +1,32 @@
+{% include '_cabecalho.html' %}
+{% block conteudo %} {% endblock %}
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>EditarCategoria</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+ <body>
+   <div class="text-center d-flex justify-content-between">
+      <div class="container-fluid">
+        <div class="col-flex m-auto pt-2 pb-flex text-center">
+            <h2> EDITAR CATEGORIA </h2>
+        </div>
+        <div class="col-5 m-auto pt-flex pb-2 text-left">
+            <div id="result"></div>
+            <form name="form" id="form" action="{% if db %}/update/categorias/{{db.id}}/{% else %}/create/categorias/{% endif %}" method="post">
+                {% csrf_token %}
+                <div class="form-group mt-4">Descrição: {{form.descricao}}</div>
+
+                <div class="col-flex m-auto pt-2 pb-2 text-left">
+                <input type="submit" class="btn btn-success" value="Salvar">
+                      <a href="/categorias" class="btn btn-primary col-flex"> Voltar </a>
+                </div>
+            </form>
+        </div>
+
+    {% load static %}
+    <script src="{% static 'javascript.js' %}"></script>
+ </body>
+</html>

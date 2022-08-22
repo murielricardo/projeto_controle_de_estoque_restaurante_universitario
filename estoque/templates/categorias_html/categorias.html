@@ -1,0 +1,57 @@
+{% include '_cabecalho.html' %}
+{% block conteudo %} {% endblock %}
+
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Categorias</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+        <body>
+          <div class="text-center d-flex justify-content-between">
+           <div class="container-fluid">
+              <div class="card">
+                <div class=" pt-3 pb-3 text-center">
+                    <h2>CATEGORIAS</h2>
+                        <div class="col-11  m-auto pt-flex pb-flex ">
+                            <a href="/form/categorias" class="btn btn-success float-left col-center text-center"> Adicionar </a>
+                        </div>
+
+                            <div class="col-8 m-auto pt-flex pb-flex text-center">
+                                <form method="get">
+                                    <input type="text" id="search" name="search"
+                                           class="form-control" placeholder="Buscar ...">
+                                </form>
+                            </div>
+                </div>
+                <div class="text-center d-flex justify-content-between">
+                     <div class="container-fluid">
+                        <table class="table table-striped text-center">
+                          <thead bgcolor="#46486e">
+                            <tr>
+                              <th scope="col" class="text-white"> ID</th>
+                              <th scope="col" class="text-white"> Descrição </th>
+                                <th scope="col" class="text-white"> Ações </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for dbs in db %}
+                            <tr>
+                              <th>{{dbs.id}}</th>
+                              <th>{{dbs.descricao}}</th>
+                              <td>
+                                  <a href="/view/categorias/{{dbs.id}}/" class="btn btn-info">Visualizar</a>
+                                  <a href="/edit/categorias/{{dbs.id}}/" class="btn btn-warning">Editar</a>
+                                  <a href="/delete/categorias/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>
+                              </td>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+            {% load static %}
+            <script src="{% static 'javascript.js' %}"></script>
+        </body>
+</html>

@@ -1,0 +1,34 @@
+{% load static %}
+
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+
+    <!-- Javascript customizado -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>ControleEstoqueRU - {% block titulo %}{% endblock %}</title>
+  </head>
+  <body>
+
+{% include '_cabecalho.html' %}
+{% block conteudo %} {% endblock %}
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+
+  </body>
+</html>

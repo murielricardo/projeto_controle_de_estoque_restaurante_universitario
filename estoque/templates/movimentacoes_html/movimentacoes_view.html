@@ -1,0 +1,33 @@
+{% include '_cabecalho.html' %}
+{% block conteudo %} {% endblock %}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>VisualizarMovimentacao</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h2> VISUALIZAR MOVIMENTAÇÃO </h2>
+    </div>
+
+      <div class="container-fluid col-5 text-left">
+          <div class="card pt-3 pb-3 ">
+
+    <div class="col-flex m-auto pt-2 pb-2 text-left">
+        <strong>Descrição:</strong> {{db.descricao}} <br>
+        <strong>Produto:</strong> {{db.produto}} <br>
+        <strong>Quantidade:</strong> {{db.qtde_movimento}} <br>
+        <strong>Data:</strong> {{db.data}} <br>
+        <strong>Observação:</strong> {{db.observacao}} <br>
+    </div>
+          </div>
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/movimentacoes" class="btn btn-primary"> Voltar </a>
+    </div>
+
+</body>
+</html>
